@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main() {
-    using std::;
+    using namespace std;
     template<typename etype>
    
     class DCLL_NODE{
@@ -11,7 +10,8 @@ int main() {
     DCLL_NODE<etype>* nextnode;
     friend DCLL;
     }
-
+    
+    template<typename etype>
     class DCLL{
     public:
     DCLL();
@@ -20,7 +20,7 @@ int main() {
     
     void setup(){head = NULL; tail =NULL;};
   
-    void printnode(DCLL_NODE* printnode){cout<<printnode->data;}
+    void printnode(DCLL_NODE<etype>* printnode){cout<<printnode->data;}
    
     void push(etype data){
     newnode = new DCLL_NODE(etype data);
@@ -87,6 +87,7 @@ int main() {
     DCLL_NODE* tail;
     };
 } //class DCLL end
+int main()
 DCLL a;
 a.setup;
 a.push(10);
